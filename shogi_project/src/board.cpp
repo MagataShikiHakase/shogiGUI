@@ -1,3 +1,4 @@
+//done
 #include <iostream>
 #include "board.h"
 #include "global.h"
@@ -19,48 +20,48 @@ Board::Board(){
     }
     //Set Pieces dynamically
     //Player1
-    placeKoma<Fu>(1, 7, PLAYER1, grid);
-    placeKoma<Fu>(2, 7, PLAYER1, grid);
-    placeKoma<Fu>(3, 7, PLAYER1, grid);
-    placeKoma<Fu>(4, 7, PLAYER1, grid);
-    placeKoma<Fu>(5, 7, PLAYER1, grid);
-    placeKoma<Fu>(6, 7, PLAYER1, grid);
-    placeKoma<Fu>(7, 7, PLAYER1, grid);
-    placeKoma<Fu>(8, 7, PLAYER1, grid);
-    placeKoma<Fu>(9, 7, PLAYER1, grid);
-    placeKoma<Hisha>(2, 8, PLAYER1, grid);
-    placeKoma<Kakugyo>(8, 8, PLAYER1, grid);
-    placeKoma<Kyosha>(1, 9, PLAYER1, grid);
-    placeKoma<Kyosha>(9, 9, PLAYER1, grid);
-    placeKoma<Keima>(2, 9, PLAYER1, grid);
-    placeKoma<Keima>(8, 9, PLAYER1, grid);
-    placeKoma<Ginsho>(3, 9, PLAYER1, grid);
-    placeKoma<Ginsho>(7, 9, PLAYER1, grid);
-    placeKoma<Kinsho>(4, 9, PLAYER1, grid);
-    placeKoma<Kinsho>(6, 9, PLAYER1, grid);
-    placeKoma<Ousho>(5, 9, PLAYER1, grid);
+    placeKoma<Fu>({1, 7}, PLAYER1, grid);
+    placeKoma<Fu>({2, 7}, PLAYER1, grid);
+    placeKoma<Fu>({3, 7}, PLAYER1, grid);
+    placeKoma<Fu>({4, 7}, PLAYER1, grid);
+    placeKoma<Fu>({5, 7}, PLAYER1, grid);
+    placeKoma<Fu>({6, 7}, PLAYER1, grid);
+    placeKoma<Fu>({7, 7}, PLAYER1, grid);
+    placeKoma<Fu>({8, 7}, PLAYER1, grid);
+    placeKoma<Fu>({9, 7}, PLAYER1, grid);
+    placeKoma<Hisha>({2, 8}, PLAYER1, grid);
+    placeKoma<Kakugyo>({8, 8}, PLAYER1, grid);
+    placeKoma<Kyosha>({1, 9}, PLAYER1, grid);
+    placeKoma<Kyosha>({9, 9}, PLAYER1, grid);
+    placeKoma<Keima>({2, 9}, PLAYER1, grid);
+    placeKoma<Keima>({8, 9}, PLAYER1, grid);
+    placeKoma<Ginsho>({3, 9}, PLAYER1, grid);
+    placeKoma<Ginsho>({7, 9}, PLAYER1, grid);
+    placeKoma<Kinsho>({4, 9}, PLAYER1, grid);
+    placeKoma<Kinsho>({6, 9}, PLAYER1, grid);
+    placeKoma<Ousho>({5, 9}, PLAYER1, grid);
     
     //Player2
-    placeKoma<Fu>(1, 3, PLAYER2, grid);
-    placeKoma<Fu>(2, 3, PLAYER2, grid);
-    placeKoma<Fu>(3, 3, PLAYER2, grid);
-    placeKoma<Fu>(4, 3, PLAYER2, grid);
-    placeKoma<Fu>(5, 3, PLAYER2, grid);
-    placeKoma<Fu>(6, 3, PLAYER2, grid);
-    placeKoma<Fu>(7, 3, PLAYER2, grid);
-    placeKoma<Fu>(8, 3, PLAYER2, grid);
-    placeKoma<Fu>(9, 3, PLAYER2, grid);
-    placeKoma<Kakugyo>(2, 2, PLAYER2, grid);
-    placeKoma<Hisha>(8, 2, PLAYER2, grid);
-    placeKoma<Kyosha>(1, 1, PLAYER2, grid);
-    placeKoma<Kyosha>(9, 1, PLAYER2, grid);
-    placeKoma<Keima>(2, 1, PLAYER2, grid);
-    placeKoma<Keima>(8, 1, PLAYER2, grid);
-    placeKoma<Ginsho>(3, 1, PLAYER2, grid);
-    placeKoma<Ginsho>(7, 1, PLAYER2, grid);
-    placeKoma<Kinsho>(4, 1, PLAYER2, grid);
-    placeKoma<Kinsho>(6, 1, PLAYER2, grid);
-    placeKoma<Ousho>(5, 1, PLAYER2, grid);
+    placeKoma<Fu>({1, 3}, PLAYER2, grid);
+    placeKoma<Fu>({2, 3}, PLAYER2, grid);
+    placeKoma<Fu>({3, 3}, PLAYER2, grid);
+    placeKoma<Fu>({4, 3}, PLAYER2, grid);
+    placeKoma<Fu>({5, 3}, PLAYER2, grid);
+    placeKoma<Fu>({6, 3}, PLAYER2, grid);
+    placeKoma<Fu>({7, 3}, PLAYER2, grid);
+    placeKoma<Fu>({8, 3}, PLAYER2, grid);
+    placeKoma<Fu>({9, 3}, PLAYER2, grid);
+    placeKoma<Kakugyo>({2, 2}, PLAYER2, grid);
+    placeKoma<Hisha>({8, 2}, PLAYER2, grid);
+    placeKoma<Kyosha>({1, 1}, PLAYER2, grid);
+    placeKoma<Kyosha>({9, 1}, PLAYER2, grid);
+    placeKoma<Keima>({2, 1}, PLAYER2, grid);
+    placeKoma<Keima>({8, 1}, PLAYER2, grid);
+    placeKoma<Ginsho>({3, 1}, PLAYER2, grid);
+    placeKoma<Ginsho>({7, 1}, PLAYER2, grid);
+    placeKoma<Kinsho>({4, 1}, PLAYER2, grid);
+    placeKoma<Kinsho>({6, 1}, PLAYER2, grid);
+    placeKoma<Ousho>({5, 1}, PLAYER2, grid);
 }
 
 //Handicap Match
@@ -110,9 +111,9 @@ void Board::show(){
     }
 }
 
-bool Board::validSpaceForMove(bool currentTurn, int toX, int toY){
+bool Board::validSpaceForMove(bool currentTurn, pair<int, int> to){
     // Valid move only if the destination is empty or occupied by an opponent's piece
-    if(grid[y_shogiIndex_to_x_arrayIndex(toY)][x_shogiIndex_to_y_arrayIndex(toX)] == nullptr || grid[y_shogiIndex_to_x_arrayIndex(toY)][x_shogiIndex_to_y_arrayIndex(toX)]->turn == !currentTurn)
+    if(grid[y_shogiIndex_to_x_arrayIndex(to.second)][x_shogiIndex_to_y_arrayIndex(to.first)] == nullptr || grid[y_shogiIndex_to_x_arrayIndex(to.second)][x_shogiIndex_to_y_arrayIndex(to.first)]->turn == !currentTurn)
         return true;
     
     return false;

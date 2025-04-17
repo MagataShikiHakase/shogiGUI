@@ -1,21 +1,22 @@
+//done
 #include "koma/fu.h"
 #include "global.h"
 
-Fu::Fu(int x, int y, bool t) : Koma(x, y, t){
+Fu::Fu(pair<int, int> p, bool t) : Koma(p, t){
     type = "FU";
 }
     
-bool Fu::validMove(int afterX, int afterY, bool turn){
+bool Fu::validMove(pair<int, int> after, bool turn){
 
     if(turn == PLAYER1){
-        if(x == afterX && y == afterY + 1){
+        if(pos.first == after.first && pos.second == after.second + 1){
             return true;
         }
     }
 
     //turn == PLAYER2
     else{
-        if(x == afterX && y == afterY - 1)
+        if(pos.first == after.first && pos.second == after.second - 1)
             return true;
     }
     return false;

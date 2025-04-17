@@ -1,10 +1,10 @@
 #include "koma/kakugyo.h"
 
-Kakugyo::Kakugyo(int x, int y, bool t) : Koma(x, y, t){
+Kakugyo::Kakugyo(pair<int, int> p, bool t) : Koma(p, t){
     type = "KA";
 }
 
-bool Kakugyo::validMove(int afterX, int afterY, bool turn){
+bool Kakugyo::validMove(pair<int, int> after, bool turn){
                 
                 
                 

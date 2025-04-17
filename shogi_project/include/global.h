@@ -1,3 +1,4 @@
+//done
 #pragma once
 
 #include "koma/koma.h"
@@ -22,9 +23,9 @@ int y_arrayIndex_to_x_shogiIndex(int y);
 
 void getMove();
 
-bool checkInsideBoard(int beforeX, int beforeY, int afterX, int afterY);
+bool checkInsideBoard(pair<int, int> before, pair<int, int> after);
 
 template <typename T>
-void placeKoma(int x_shogiIndex, int y_shogiIndex, bool turn, Koma* grid[9][9]){
-    grid[y_shogiIndex_to_x_arrayIndex(y_shogiIndex)][x_shogiIndex_to_y_arrayIndex(x_shogiIndex)] = new T(x_shogiIndex, y_shogiIndex, turn);
+void placeKoma(pair<int,int> shogiIndex, bool turn, Koma* grid[9][9]){
+    grid[y_shogiIndex_to_x_arrayIndex(shogiIndex.second)][x_shogiIndex_to_y_arrayIndex(shogiIndex.first)] = new T(shogiIndex, turn);
 }

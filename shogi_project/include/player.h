@@ -1,3 +1,4 @@
+//done
 #pragma once
 
 #include <vector>
@@ -9,7 +10,7 @@ public:
     vector<Koma*> tegoma;
     
     Player(bool t);
-    void makeMove(int fromX, int fromY, int toX, int toY, Koma* grid[9][9]);
+    void makeMove(pair<int, int> from, pair<int, int> to, Koma* grid[9][9]);
     void getKoma();
     void makePromoted();
 };

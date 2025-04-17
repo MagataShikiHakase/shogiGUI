@@ -1,3 +1,4 @@
+//done
 #pragma once
 
 #include <string>
@@ -11,7 +12,7 @@ public:
     string kifu;
 
     Game();
-    void addKifu(int afterX, int afterY, Koma* koma, int moveType);
+    void addKifu(pair<int, int> after, Koma* koma, int moveType);
     bool sennnitite();
     bool outesennnitite();
 };

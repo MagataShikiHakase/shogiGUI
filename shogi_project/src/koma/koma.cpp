@@ -1,6 +1,7 @@
+//done
 #include "koma/koma.h"
 
-Koma::Koma(int x, int y, bool t) : x(x), y(y), turn(t){
+Koma::Koma(pair<int, int> p, bool t) : pos(p), turn(t){
     promoted = false;
 }
         

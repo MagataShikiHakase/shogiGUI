@@ -1,10 +1,11 @@
+//done
 #include "koma/hisha.h"
 
-Hisha::Hisha(int x, int y, bool t) : Koma(x, y, t){
+Hisha::Hisha(pair<int, int> p, bool t) : Koma(p, t){
     type = "HI";
 }
 
-bool Hisha::validMove(int afterX, int afterY, bool turn){
+bool Hisha::validMove(pair<int, int> after, bool turn){
                 
                 
                 

@@ -1,10 +1,11 @@
+//done
 #include "koma/kyosha.h"
 
-Kyosha::Kyosha(int x, int y, bool t) : Koma(x, y, t){
+Kyosha::Kyosha(pair<int, int> p, bool t) : Koma(p, t){
     type = "KY";
 }
 
-bool Kyosha::validMove(int afterX, int afterY, bool turn){
+bool Kyosha::validMove(pair<int, int> after, bool turn){
     
     
     

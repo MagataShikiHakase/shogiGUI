@@ -1,9 +1,10 @@
+//done
 #pragma once
 
 #include "koma.h"
 
 class Ginsho : public Koma{
 public:
-    Ginsho(int x, int y, bool t);
-    bool validMove(int afterX, int afterY, bool turn) override;
+    Ginsho(pair<int, int> p, bool t);
+    bool validMove(pair<int, int> after, bool turn) override;
 };

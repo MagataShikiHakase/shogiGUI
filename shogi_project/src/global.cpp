@@ -1,3 +1,5 @@
+//done
+#include <utility>
 #include "global.h"
 
 using namespace std;
@@ -19,8 +21,8 @@ void getMove(){
 
 }
 
-bool checkInsideBoard(int beforeX, int beforeY, int afterX, int afterY){
-    if((1 <= beforeX && beforeX <= 9 && 1 <= beforeY && beforeY <= 9) && (1 <= afterX && afterX <= 9 && 1 <= afterY && afterY <= 9)){
+bool checkInsideBoard(pair<int, int> before, pair<int, int> after){
+    if((1 <= before.first && before.first <= 9 && 1 <= before.second && before.second <= 9) && (1 <= after.first && after.first <= 9 && 1 <= after.second && after.second <= 9)){
         return true;
     }
     return false;

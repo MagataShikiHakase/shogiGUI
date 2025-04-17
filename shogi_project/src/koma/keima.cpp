@@ -1,10 +1,11 @@
+//done
 #include "koma/keima.h"
 
-Keima::Keima(int x, int y, bool t) : Koma(x, y, t){
+Keima::Keima(pair<int, int> p, bool t) : Koma(p, t){
     type = "KE";
 }
 
-bool Keima::validMove(int afterX, int afterY, bool turn){
+bool Keima::validMove(pair<int, int> after, bool turn){
         
         
         

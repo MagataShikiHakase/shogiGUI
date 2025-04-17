@@ -1,15 +1,18 @@
+//done
 #pragma once
 
 #include <string>
+#include <utility>
+
 using namespace std;
 
 class Koma{
 public:
-    int x, y;
+    pair<int, int> pos;
     string type;
     bool turn, promoted;
     
-    Koma(int x, int y, bool t);
+    Koma(pair<int, int> p, bool t);
     virtual ~Koma();
-    virtual bool validMove(int afterX, int afterY, bool turn) = 0;
+    virtual bool validMove(pair<int, int> after, bool turn) = 0;
 };

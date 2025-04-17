@@ -1,3 +1,4 @@
+//done
 #pragma once
 
 #include "koma/koma.h"
@@ -15,7 +16,7 @@ public:
     ~Board();
     
     void show();
-    bool validSpaceForMove(bool currentTurn, int toX, int toY);
+    bool validSpaceForMove(bool currentTurn, pair<int, int> to);
 
     //Board can check the situation is game orver or not but it cant check the oute
     bool tumi();

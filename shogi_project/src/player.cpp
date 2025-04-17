@@ -1,20 +1,21 @@
+//dond
 #include "player.h"
 #include "global.h"
 #include "koma/koma.h"
 
 Player::Player(bool t) : turn(t){};
 
-void Player::makeMove(int fromX, int fromY, int toX, int toY, Koma* grid[9][9]){
-    Koma* moving = grid[y_shogiIndex_to_x_arrayIndex(fromY)][x_shogiIndex_to_y_arrayIndex(fromX)];
+void Player::makeMove(pair<int, int> from, pair<int, int> to, Koma* grid[9][9]){
+    Koma* moving = grid[y_shogiIndex_to_x_arrayIndex(from.second)][x_shogiIndex_to_y_arrayIndex(from.first)];
 
-    if(grid[y_shogiIndex_to_x_arrayIndex(toY)][x_shogiIndex_to_y_arrayIndex(toX)] != nullptr)
-        delete grid[y_shogiIndex_to_x_arrayIndex(toY)][x_shogiIndex_to_y_arrayIndex(toX)];
+    if(grid[y_shogiIndex_to_x_arrayIndex(to.second)][x_shogiIndex_to_y_arrayIndex(to.first)] != nullptr)
+        delete grid[y_shogiIndex_to_x_arrayIndex(to.second)][x_shogiIndex_to_y_arrayIndex(to.first)];
 
-    grid[y_shogiIndex_to_x_arrayIndex(toY)][x_shogiIndex_to_y_arrayIndex(toX)] = moving;
-    grid[y_shogiIndex_to_x_arrayIndex(fromY)][x_shogiIndex_to_y_arrayIndex(fromX)] = nullptr;
+    grid[y_shogiIndex_to_x_arrayIndex(to.second)][x_shogiIndex_to_y_arrayIndex(to.first)] = moving;
+    grid[y_shogiIndex_to_x_arrayIndex(from.second)][x_shogiIndex_to_y_arrayIndex(from.first)] = nullptr;
 
-    moving->x = toX;
-    moving->y = toY;
+    moving->pos.first = to.first;
+    moving->pos.second = to.second;
 }
         
 void Player::getKoma(){

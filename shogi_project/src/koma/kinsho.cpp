@@ -1,10 +1,10 @@
 #include "koma/kinsho.h"
 
-Kinsho::Kinsho(int x, int y, bool t) : Koma(x, y, t){
+Kinsho::Kinsho(pair<int, int> p, bool t) : Koma(p, t){
     type = "KI";
 }
 
-bool Kinsho::validMove(int afterX, int afterY, bool turn){
+bool Kinsho::validMove(pair<int, int> after, bool turn){
                 
                 
                 

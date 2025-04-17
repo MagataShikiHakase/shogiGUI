@@ -1,3 +1,4 @@
+//done
 #include "game.h"
 
 Game::Game(){
@@ -5,10 +6,10 @@ Game::Game(){
     kifu = "";
 }
 
-void Game::addKifu(int afterX, int afterY, Koma* koma, int moveType){
+void Game::addKifu(pair<int, int> after, Koma* koma, int moveType){
     std::string move = (koma->turn ? "▲" : "△") +
-                       std::to_string(afterX) +
-                       std::to_string(afterY) +
+                       std::to_string(after.first) +
+                       std::to_string(after.second) +
                        koma->type;
     kifu.append(move + "\n");
 }
